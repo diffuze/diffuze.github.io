@@ -38,7 +38,7 @@
       }
       
       #help {
-	font-size:12pt;
+	font-size:11pt;
         border: 1px solid lightgray;
         width: 645px;
 	height:180px;
@@ -51,7 +51,7 @@
 	background-color:#fafafa;
       }
       #desc{
-	font-size:12pt;
+	font-size:11pt;
         border: 1px solid lightgray;
 	width:800px;
 	height:180px;
@@ -80,6 +80,13 @@
 	position: absolute;
 	padding-left: 10px;
 	background-color:#fafafa;
+      }
+      #extra_info {
+        border: 0px;
+        bottom: 20px;
+	position: absolute;	
+	padding-left: 10px;
+	font-size:10pt;
       }
       #export{
 	  position:absolute;
@@ -127,18 +134,18 @@
 
     <div id='topbox'>
         <div id='desc'>
-	 <h3>About</h3>
-    	This is an interactive application showing the long-term conditions which develop amongst individuals following a heart attack. The high-resolution data-driven model uses 145 million hospitalisation records in England over a decade to help better understand the patterns and likelihood of multiple long-term health conditions for survivors of a heart attack. Directed edges between ICD-10 chapter headings represent progression from one primary diagnosis to the next. Edge colours and widths are proportional to the number of individuals that progress between diagnoses. Disease trajectories from all individuals within the MI cohort (n=375,669) and matched control cohort (n=1,878,345) are used to construct the networks.</p>
+	 <p style='font-size:13pt;font-weight:bold;padding:0px;margin-top:10px;margin-bottom:10px'>About</p>
+    	This is an interactive application showing the long-term conditions which develop amongst individuals following a heart attack. The high-resolution data-driven model uses 145 million hospitalisation records in England over a decade to help better understand the patterns and likelihood of multiple long-term health conditions for survivors of a heart attack. Directed edges between ICD-10 chapter headings represent progression from one diagnosis to the next. Edge colours and widths are proportional to the number of individuals that progress between diagnoses. Disease trajectories from all individuals within the MI cohort (n=375,669) and matched control cohort (n=1,878,345) are used to construct the networks.</p>
        </div>
 
        <div id='help'>
-	 <h3>How to use</h3>
-	  <ul style="list-style-type:square;">
+	 <p style='font-size:13pt;font-weight:bold;padding:0px;margin-top:10px;margin-bottom:10px'>How to use</p>
+	  <ul style="list-style-type:square;margin-top:0px;">
     	    <li>In 'Options', specify what data to view (e.g. which cohort: MI or matched Control).</li>
-    	    <li>Hover with the cursor over the connections to see the number of individuals that progress from one chapter to the next.</li>
+    	    <li>Using the mouse pointer, hover over the connections to show the number of individuals that progress from one diagnosis to the next.</li>
     	    <li>Click on a chapter/sub-chapter to view the connected chapters/sub-chapters.</li>
     	    <li>Rearrange the network by clicking and dragging chapters with the mouse.</li>
-	    <li>Zoom in and out using the mouse-wheel.</li>
+	    <li>Zoom in and out using the mouse wheel.</li>
 	 </ul>
        </div>
     </div>
@@ -146,9 +153,10 @@
 
     <div id='main'>
       <div id="mynetwork"></div>
+      <div id="extra_info">Made using vis.js<br><a href="https://visjs.org/">https://visjs.org/</a></div>
       <div id="loader"></div>
       <div id="controls">
-	<h3>Options</h3>
+	<p style='font-size:13pt;font-weight:bold;padding:0px;margin-top:10px;margin-bottom:10px'>Options</p>
 	<p>
 	  <!--<p id='prc_complete'></p>-->
 	  
@@ -174,7 +182,7 @@
 	  <label for="radio_network_chapter_sub">ICD-10 sub-chapters</label><br>
 	  </p>
 	  <hr>
-	  <b>Connection threshold:</b><br>
+	  <b>Transition threshold:</b><br>
 	  <input type="radio" id="radio_limitAll" name="radio_limit" value="All" title='Show all connections'>
 	  <label for="radio_limitAll">All</label><br>
 	  <input type="radio" id="radio_limit005" name="radio_limit" value="005" title='Show connections followed by at least 0.05% of the cohort' checked>
@@ -203,7 +211,7 @@
 
     <div id="export-dialog" title="">
       <p><b>Network data (JSON format)</b></p>
-      <p>Below is the data used to construct the network. The format is JSON. This can be copied and saved in a file and used by other visualisation software.</p>
+      <p>Below is the data used to construct the network. This can be copied and saved in a file and used by other visualisation software.</p>
 	<textarea id="export-dialog-text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
 	<!-- <input type="text" name="name" id="export-dialog-text" -->
 	<!--        class="text ui-widget-content ui-corner-all"> -->
